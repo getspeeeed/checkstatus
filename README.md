@@ -8,6 +8,7 @@ Firebase based cloud functions which checks the status of the site.
 ## How to develop
 
 ```
+$ npm install -g firebase
 $ npm --prefix functions/ install
 $ npm --prefix functions/ test
 ```

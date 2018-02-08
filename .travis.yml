@@ -8,6 +8,5 @@ branches:
   - "/^v?[0-9\\.]+/"
 before_script:
   - npm --prefix functions/ install
-  - npm --prefix functions/ test
 script:
-  - npm test
+  - npm --prefix functions/ test
