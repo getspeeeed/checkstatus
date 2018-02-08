@@ -18,3 +18,9 @@ $ npm --prefix functions/ test
 ```
 $ firebase deploy
 ```
+
+## Logs
+
+```
+$ npm --prefix functions/ run logs
+```
