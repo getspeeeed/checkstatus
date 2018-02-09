@@ -1,14 +1,14 @@
 'use strict';
 
 const functions = require( 'firebase-functions' )
-const getStats = require( './lib/getstats' )
+const getStatus = require( './lib/getstatus' )
 
-exports.checkstats = functions.pubsub.topic( 'checkstats' ).onPublish( ( event ) => {
+exports.checkstatus = functions.pubsub.topic( 'checkstatus' ).onPublish( ( event ) => {
 
   const data = JSON.parse( Buffer.from( event.data.data, 'base64' ).toString() );
 
-  const st = new getStats( data.url );
-  st.req( ( res ) => {
+  const getstatus = new getStatus( data.url );
+  getstatus.req( ( res ) => {
     console.log( res )
   } )
 

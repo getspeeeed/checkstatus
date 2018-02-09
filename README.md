@@ -1,6 +1,6 @@
-# checkstats
+# checkstatus
 
-[![Build Status](https://travis-ci.org/sitestatus/checkstats.svg?branch=master)](https://travis-ci.org/sitestatus/checkstats)
+[![Build Status](https://travis-ci.org/sitestatus/checkstatus.svg?branch=master)](https://travis-ci.org/sitestatus/checkstatus)
 
 Firebase based cloud functions which checks the status of the site.
 

@@ -2,11 +2,11 @@
 
 const request = require( 'request' )
 
-const getStats = function( url ) {
+const getStatus = function( url ) {
   this.url = url
 }
 
-getStats.prototype.req = function( callback ) {
+getStatus.prototype.req = function( callback ) {
   const options = { url: this.url, method: 'HEAD' }
   const start = new Date().getTime();
   request( options, ( error, response, body ) => {
@@ -21,4 +21,4 @@ getStats.prototype.req = function( callback ) {
   } )
 }
 
-module.exports = getStats;
+module.exports = getStatus;

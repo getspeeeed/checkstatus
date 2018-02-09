@@ -2,7 +2,7 @@
 
 const expect = require( 'chai' ).expect;
 
-describe('Test checkstats', () => {
+describe('Test checkstatus', () => {
 
   it( 'Test index.js', ( done ) => {
     const app = require( '../index' );
@@ -10,7 +10,7 @@ describe('Test checkstats', () => {
       data: { data: Buffer.from( JSON.stringify( { url: 'https://miya.io/' } ) ) },
       params: {}
     }
-    app.checkstats( fakeEvent )
+    app.checkstatus( fakeEvent )
     done()
   } );
 

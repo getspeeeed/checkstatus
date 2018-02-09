@@ -18,8 +18,8 @@ const mockserver = 'http://127.0.0.1:8080';
 describe('Get the http status', () => {
 
   it( 'Send http request to the website', ( done ) => {
-    const getStats = require( '../lib/getstats' );
-    const st = new getStats( 'https://miya.io/' );
+    const getstatus = require( '../lib/getstatus' );
+    const st = new getstatus( 'https://miya.io/' );
     st.req( ( result ) => {
       expect( result.time > 0 ).to.equal( true );
       expect( result.error ).to.equal( null );
@@ -29,8 +29,8 @@ describe('Get the http status', () => {
   } );
 
   it( 'It should get 404', ( done ) => {
-    const getStats = require( '../lib/getstats' );
-    const st = new getStats( 'https://miya.io/404-not-found' );
+    const getstatus = require( '../lib/getstatus' );
+    const st = new getstatus( 'https://miya.io/404-not-found' );
     st.req( ( result ) => {
       expect( result.time > 0 ).to.equal( true );
       expect( result.error ).to.equal( null );
@@ -41,8 +41,8 @@ describe('Get the http status', () => {
 
   it( 'It should get status 200', ( done ) => {
     const server = runserver( 200 );
-    const getStats = require( '../lib/getstats' );
-    const st = new getStats( mockserver );
+    const getstatus = require( '../lib/getstatus' );
+    const st = new getstatus( mockserver );
     st.req( ( result ) => {
       expect( result.time > 0 ).to.equal( true );
       expect( result.error ).to.equal( null );
@@ -53,8 +53,8 @@ describe('Get the http status', () => {
 
   it( 'It should get status 500', ( done ) => {
     const server = runserver( 500 );
-    const getStats = require( '../lib/getstats' );
-    const st = new getStats( mockserver );
+    const getstatus = require( '../lib/getstatus' );
+    const st = new getstatus( mockserver );
     st.req( ( result ) => {
       expect( result.time > 0 ).to.equal( true );
       expect( result.error ).to.equal( null );
@@ -64,8 +64,8 @@ describe('Get the http status', () => {
   } );
 
   it( 'It should get error to connect', ( done ) => {
-    const getStats = require( '../lib/getstats' );
-    const st = new getStats( mockserver );
+    const getstatus = require( '../lib/getstatus' );
+    const st = new getstatus( mockserver );
     st.req( ( result ) => {
       expect( result.time > 0 ).to.equal( true );
       expect( result.error.errno ).to.equal( 'ECONNREFUSED' );
